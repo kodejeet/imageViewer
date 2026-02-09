@@ -26,9 +26,11 @@ int main() {
   //generated a single red pixel
   
   // this loops cover the whole screen of 900/600 red since the pixel runs on a loop
+  SDL_Rect pixel = (SDL_Rect){0,0,1,1};
   for(int x = 0; x<width; x++){
     for (int y=0; y<height; y++) {
-      SDL_Rect pixel = (SDL_Rect){x,y,1,1};
+      pixel.x=x;
+      pixel.y=y;
       SDL_FillRect(psurface, &pixel, color);
     }
   }
